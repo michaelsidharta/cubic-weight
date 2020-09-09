@@ -63,6 +63,21 @@ func TestGet(t *testing.T) {
 			},
 			want:    entity.APIResponse{},
 			wantErr: true,
+		}, {
+			name: "error response not json",
+			args: args{
+				ctx: context.Background(),
+				URL: "",
+			},
+			init: func() *httptest.Server {
+				resp := `<`
+				ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+					fmt.Fprintln(w, resp)
+				}))
+				return ts
+			},
+			want:    entity.APIResponse{},
+			wantErr: true,
 		},
 	}
 	for _, tt := range tests {
