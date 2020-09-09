@@ -1,3 +1,4 @@
+all: test
 run:
 	go run main.go
 
