@@ -1,5 +1,7 @@
 # Cubic Weight Average calculator
 
+[![Build Status](https://travis-ci.org/michaelsidharta/cubic-weight.svg?branch=master)](https://travis-ci.org/michaelsidharta/cubic-weight)
+
 Language: Go
 
 Requirements:
